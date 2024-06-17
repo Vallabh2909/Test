@@ -1,4 +1,7 @@
-sudo: required
+dist: xenial   # Specify the distribution, default is xenial
+os: linux      # Specify the operating system, default is linux
+language: node_js # Specify the language, default is ruby
+
 services:
   - docker
 
@@ -6,4 +9,4 @@ before_install:
   - docker build -t vallabh1421/prod-flow:test -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true vallabh1421/prod-flow:test npm run test 
+  - docker run -e CI=true vallabh1421/prod-flow:test npm run test
