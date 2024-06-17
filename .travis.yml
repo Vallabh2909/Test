@@ -1,4 +1,4 @@
-dist: xenial   # Specify the distribution, default is xenial
+dist: bionic   # Specify the distribution, default is xenial
 os: linux      # Specify the operating system, default is linux
 language: node_js # Specify the language, default is ruby
 node_js:
