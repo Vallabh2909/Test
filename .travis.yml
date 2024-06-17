@@ -7,3 +7,15 @@ before_install:
 
 script:
   - docker run -e CI=true vallabh1421/prod-flow:test npm run test 
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-south-1"
+  app: "React-test"
+  env: "React-test-env "
+  bucket_name: "elasticbeanstalk-ap-south-1-590183889458"
+  bucket_path: "React-test"
+  on:
+    branch: main
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
