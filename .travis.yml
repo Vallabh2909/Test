@@ -1,19 +1,11 @@
-dist: bionic
-os: linux
-language: node_js
-
-node_js:
-  - "20"  # Use the latest LTS or stable version for Node.js 20.x
+dist: xenial   # Specify the distribution, default is xenial
+os: linux      # Specify the operating system, default is linux
+language: node_js # Specify the language, default is ruby
 
 services:
   - docker
 
 before_install:
-  - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-  - export NVM_DIR="$HOME/.nvm"
-  - [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-  - nvm install 20  # Install Node.js version 20.x
-
   - docker build -t vallabh1421/prod-flow:test -f Dockerfile.dev .
 
 script:
