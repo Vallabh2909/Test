@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t vallabh1421/prod-flow:test -f Dockerfile.dev .
+  - docker build -t vallabh1421/prod-flow:test .
 
 script:
   - docker run -e CI=true vallabh1421/prod-flow:test npm run test 
